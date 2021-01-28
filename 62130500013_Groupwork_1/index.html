@@ -12,21 +12,160 @@
   
     <!-- https://tailwindcss.com/docs/installation -->
     <!-- Using Tailwind via CDN -->
-    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet" />
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
   
     <!-- https://v3.vuejs.org/guide/installation.html#release-notes -->
     <!-- Vue CDN -->
     <script src="https://unpkg.com/vue@next"></script>
-  
+  <style>
+    dshadow{
+      filter: drop-shadow(0.1rem 0.1rem 0.01rem  #D97706);
+    }
+    .tshadow{
+      text-shadow: 0 0.05rem 0.03rem #D97706;
+    }
+  </style>
   </head>
 
   <body>
-    <div id="app" class="h-screen max-w-2xl bg-indigo-200 mx-auto">
-      <p class="text-pink-500 text-lg uppercase font-semibold">INTRODUCTION</p>
-      <h1>Taiiwind stroies</h1>
-    </div>
-    <!-- my main.js -->
-    <script src="./main.js"></script>
+    <nav class="fixed w-full  bg-yellow-500 shadow">
+      <ul class="container flex flex-row mx-auto pl-0.5 h-10 w-4/5 divide-x divide-yellow-600 bg-yellow-600 overflow-hidden">
+        <li class="box-content flex-auto  h-10 bg-yellow-500" >
+          <a href="">
+          <img src=".\images\Dek_D_1.png" class="dshadow my-2.5 mx-auto h-5 ">
+          </a>
+        </li>
+        <li class="box-content flex-auto h-10 bg-yellow-500" > 
+          <div class="tshadow my-2.5 mx-auto text-center text-sm text-white"><a href="" >กระทู้ทางบ้าน</a></div>
+        </li>
+        <li class="box-content flex-auto h-10 bg-yellow-500" > 
+            <div class="tshadow flex flex-row text-center mt-2.5 pl-1 text-sm text-white">
+                <div class="flex-auto"><a href="" >นิยาย</a></div>
+                <div class="flex-auto -ml-1"><i class="material-icons"> keyboard_arrow_down </i></div>
+                  <ul
+    class="bg-white border rounded-sm transform scale-0 group-hover:scale-100 absolute 
+  transition duration-150 ease-in-out origin-top min-w-32"
+  >
+    <li class="rounded-sm px-3 py-1 hover:bg-gray-100">Programming</li>
+    <li class="rounded-sm px-3 py-1 hover:bg-gray-100">DevOps</li>
+    <li class="rounded-sm relative px-3 py-1 hover:bg-gray-100">
+      <button
+        class="w-full text-left flex items-center outline-none focus:outline-none"
+      >
+        <span class="pr-1 flex-1">Langauges</span>
+        <span class="mr-auto">
+          <svg
+            class="fill-current h-4 w-4
+            transition duration-150 ease-in-out"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 20 20"
+          >
+            <path
+              d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
+            />
+          </svg>
+        </span>
+      </button>
+      <ul
+        class="bg-white border rounded-sm absolute top-0 right-0 
+  transition duration-150 ease-in-out origin-top-left
+  min-w-32
+  "
+      >
+        <li class="px-3 py-1 hover:bg-gray-100">Javascript</li>
+        <li class="rounded-sm relative px-3 py-1 hover:bg-gray-100">
+          <button
+            class="w-full text-left flex items-center outline-none focus:outline-none"
+          >
+            <span class="pr-1 flex-1">Python</span>
+            <span class="mr-auto">
+              <svg
+                class="fill-current h-4 w-4
+                transition duration-150 ease-in-out"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
+                />
+              </svg>
+            </span>
+          </button>
+          <ul
+            class="bg-white border rounded-sm absolute top-0 right-0 
+      transition duration-150 ease-in-out origin-top-left
+      min-w-32
+      "
+          >
+            <li class="px-3 py-1 hover:bg-gray-100">2.7</li>
+            <li class="px-3 py-1 hover:bg-gray-100">3+</li>
+          </ul>
+        </li>
+        <li class="px-3 py-1 hover:bg-gray-100">Go</li>
+        <li class="px-3 py-1 hover:bg-gray-100">Rust</li>
+      </ul>
+    </li>
+    <li class="rounded-sm px-3 py-1 hover:bg-gray-100">Testing</li>
+  </ul>
+            </div>
+        </li>
+        <li class="box-content flex-auto h-10 bg-yellow-500" > 
+          <div class="tshadow my-2.5 mx-auto text-center text-sm text-white"><a href="" >ควิซ</a></div>
+        </li>
+        <li class="box-content flex-auto h-10 bg-yellow-500" > 
+          <div class="tshadow my-2.5 mx-auto text-center text-sm text-white"><a href="" >TCAS</a></div>
+        </li>
+        <li class="box-content flex-auto h-10 bg-yellow-500" > 
+          <div class="tshadow my-2.5 mx-auto text-center text-sm text-white"><a href="" >ค่าย กิจกรรม</a></div>
+        </li>
+        <li class="box-content flex-auto h-10 bg-yellow-500" > 
+          <div class="tshadow my-2.5 mx-auto text-center text-sm text-white"><a href="" >เรื่องเรียน</a></div>
+        </li>
+        <li class="box-content flex-auto h-10 bg-yellow-500" > 
+          <div class="tshadow my-2.5 mx-auto text-center text-sm text-white"><a href="" >ต่อนอก</a></div>
+        </li>
+        <li class="box-content flex-auto h-10 bg-yellow-500" > 
+          <div class="tshadow my-2.5 mx-auto text-center text-sm text-white"><a href="" >NUGIRL</a></div>
+        </li>
+        <li class="box-content flex-auto h-10 bg-yellow-500" > 
+          <div class="tshadow my-2.5 mx-auto text-center text-sm text-white"><a href="" >ชีวิตวัยรุ่น</a></div>
+        </li>
+        <li class="box-content flex-auto h-10 bg-yellow-500" > 
+          <div class="tshadow flex flex-row text-center mt-2.5 pl-1 text-sm text-white">
+            <div class="flex-auto"><a href="">สอบพรีเทส</a></div>
+            <div class="flex-auto -ml-1"><i class="material-icons"> keyboard_arrow_down </i></div>
+          </div>
+        </li>
+        <li class="box-content flex-auto h-10 bg-yellow-500" > 
+          <div class="tshadow flex flex-row text-center mt-2.5 pl-1 text-sm text-white">
+            <div class="flex-auto"><a href="">อีเวนต์เด็กดี</a></div>
+            <div class="flex-auto -ml-1"><i class="material-icons"> keyboard_arrow_down </i></div>
+          </div>
+        </li>
+        <li class="box-content flex-auto h-10 bg-yellow-500" > 
+          <div class="tshadow my-2.5 mx-auto text-center text-sm text-white"><a href="" >ติวออนไลน์</a></div>
+        </li>
+        <li class="box-content flex-auto h-10 bg-yellow-500" > 
+          <div class="tshadow my-2.5 mx-auto text-center text-sm text-white"><a href="" >แอป</a></div>
+        </li>
+        <li class="box-content flex-auto h-10 bg-yellow-500" > 
+          <div class="tshadow my-2.5 mx-auto text-center text-sm text-white"><a href="" >สินค้า</a></div>
+        </li>
+        <li class="box-content flex-auto h-10 bg-yellow-500" > 
+          <div class="tshadow flex flex-row text-center mt-2.5 pr-1 text-sm text-white">
+            <div class="flex-auto -mr-1"><i class="material-icons">person</i></div>
+            <div class="flex-auto"><a href="">เข้าสู่ระบบ</a></div>
+          </div>
+        </li>
+        <li class="box-content flex-auto h-10 bg-yellow-500" > 
+          <div class="tshadow my-2.5 mx-auto text-center text-sm text-white"><a href="" >
+            <i class="material-icons">
+            search
+            </i>
+          </a></div>
+        </li>
+      </ul>      
+    </nav>
   </body>
 
 </html>
