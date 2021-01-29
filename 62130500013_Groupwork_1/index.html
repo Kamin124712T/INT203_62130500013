@@ -18,82 +18,175 @@
     <!-- Vue CDN -->
     <script src="https://unpkg.com/vue@next"></script>
   <style>
-    dshadow{
-      filter: drop-shadow(0.1rem 0.1rem 0.01rem  #D97706);
-    }
     .tshadow{
-      text-shadow: 0 0.05rem 0.03rem #D97706;
+      text-shadow: 0 0.03rem 0.01rem #c4833a;
+    }
+    .dropdown:hover .dropdown-menu {
+    display: block;
+    }
+    .material-icons.md-10 { 
+      font-size: 10px; 
+    }
+    .material-icons.md-16 { 
+      font-size: 16px; 
     }
   </style>
   </head>
 
   <body>
+    <div id="app">
     <nav class="fixed w-full  bg-yellow-500 shadow">
-      <ul class="container flex flex-row mx-auto pl-0.5 h-10 w-4/5 divide-x divide-yellow-600 bg-yellow-600 overflow-hidden">
-        <li class="box-content flex-auto  h-10 bg-yellow-500" >
+      <ul class="container flex flex-row flex-nowrap overflow-x-auto mx-auto h-10 xl:w-4/5 w-full  divide-x divide-yellow-600 bg-yellow-600 overflow-hidden">
+        <li class="box-content xl:flex-auto flex-none border-l border-yellow-600 h-10 bg-yellow-500 hover:bg-white"  
+        v-on:mouseover="logomouseover" v-on:mouseleave="logomouseleave" >
           <a href="">
-          <img src=".\images\Dek_D_1.png" class="dshadow my-2.5 mx-auto h-5 ">
+          <img  v-bind:src="img"  v-bind:style='{"filter": (img==imgs[0]? "drop-shadow(0.1rem 0.1rem 0.01rem  #D97706" : "drop-shadow(0 0 0  #ffffff" )}' class=" my-2.5 mx-auto h-5 ">
           </a>
         </li>
-        <li class="box-content flex-auto h-10 bg-yellow-500" > 
-          <div class="tshadow my-2.5 mx-auto text-center text-sm text-white"><a href="" >กระทู้ทางบ้าน</a></div>
+        <li class="box-content xl:flex-auto flex-none h-10 bg-yellow-500 group hover:bg-white"  > 
+          <div class="tshadow my-2.5 mx-auto text-center text-sm text-white group-hover:text-yellow-500"><a href="" >กระทู้ทางบ้าน</a></div>
         </li>
-        <li class="box-content flex-auto h-10 bg-yellow-500" > 
-            <div class="tshadow flex flex-row text-center mt-2.5 pl-1 text-sm text-white">
+        <li class="box-content xl:flex-auto flex-none h-10 bg-yellow-500 group hover:bg-white" > 
+          <div class="dropdown">
+            <div class="tshadow flex flex-row text-center mt-2.5 pl-1 text-sm text-white group-hover:text-yellow-500">
                 <div class="flex-auto"><a href="" >นิยาย</a></div>
-                <div class="flex-auto -ml-1"><i class="material-icons"> keyboard_arrow_down </i></div>
+                <div class="flex-auto -ml-1"><a href="" ><i class="material-icons"> keyboard_arrow_down </i></a></div>
             </div>
+            <ul class="dropdown-menu absolute hidden  z-10 shadow w-60">
+              <li class=""><a class=" bg-white pt-4 pb-3 px-4 block whitespace-no-wrap text-yellow-500 hover:text-yellow-600" href="#"><b>มุมนักอ่านนิยาย</b></a>
+              <ul class="divide-y divide-gray-50  text-sm">
+                <li class=" bg-white flex flex-row pb-1.5 pt-2 px-4 block whitespace-no-wrap text-gray-500  group hover:bg-yellow-100 hover:text-yellow-500">
+                  <a class="flex-none pr-2 text-yellow-500" href=""><i class="material-icons md-16">local_fire_department</i></a>
+                  <a class="flex-none" href="">ค้นหานิยาย</a>
+                </li>
+                <li class=" bg-white flex flex-row pb-1.5 pt-2 px-4 block whitespace-no-wrap  text-gray-500 hover:bg-yellow-100 hover:text-yellow-500">
+                  <a class="flex-none pr-2 text-yellow-500" href=""><i class="material-icons md-16">local_fire_department</i></a>
+                  <a class="flex-none " href="">นิยายแนะนำ</a>
+                </li>
+                <li class=" bg-white flex flex-row pb-1.5 pt-2 px-4 block whitespace-no-wrap  text-gray-500 hover:bg-yellow-100 hover:text-yellow-500">
+                  <a class="flex-none pr-2 text-yellow-500" href=""><i class="material-icons md-16">local_fire_department</i></a>
+                  <a class="flex-none " href="">ร้านค้านิยาย</a>
+                </li>
+                <li class=" bg-white flex flex-row pb-2 pt-2 px-4 block whitespace-no-wrap  text-gray-500 hover:bg-yellow-100 hover:text-yellow-500">
+                  <a class="flex-none pr-2.5 pl-1 text-yellow-500  " href=""><i class="material-icons md-10">fiber_manual_record</i></a>
+                  <a class="flex-none " href="">ค้นหา Visual Novel</a>
+                </li>
+              </ul>
+              <ul class="dropdown-menu absolute hidden  z-10 shadow w-60">
+                <li class=""><a class=" bg-white pt-4 pb-3 px-4 block whitespace-no-wrap text-yellow-500 hover:text-yellow-600" href="#"><b>มุมนักเขียนนิยาย</b></a>
+                <ul class="divide-y divide-gray-50  text-sm">
+                  <li class=" bg-white flex flex-row pb-1.5 pt-2 px-4 block whitespace-no-wrap  text-gray-500 hover:bg-yellow-100 hover:text-yellow-500">
+                    <a class="flex-none pr-2 text-yellow-500" href=""><i class="material-icons md-16">local_fire_department</i></a>
+                    <a class="flex-none " href="">แต่งนิยาย</a>
+                  </li>
+                  <li class=" bg-white flex flex-row pb-1.5 pt-2 px-4 block whitespace-no-wrap  text-gray-500 hover:bg-yellow-100 hover:text-yellow-500">
+                    <a class="flex-none pr-2.5 pl-1 text-yellow-500  " href=""><i class="material-icons md-10">fiber_manual_record</i></a>
+                    <a class="flex-none " href="">เริ่มต้นแต่งนิยาย</a>
+                    <div class="flex-none box-content bg-yellow-500 ml-1 mt-0.5 px-0.5 text-white text-xs rounded-3xl " href="">&nbsp New &nbsp</div>
+                  </li>
+                  <li class=" bg-white flex flex-row pb-2 pt-2 px-4 block whitespace-no-wrap  text-gray-500 hover:bg-yellow-100 hover:text-yellow-500">
+                    <a class="flex-none pr-2.5 pl-1 text-yellow-500  " href=""><i class="material-icons md-10">fiber_manual_record</i></a>
+                    <a class="flex-none " href="">บอร์ดนักเขียน</a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
         </li>
-        <li class="box-content flex-auto h-10 bg-yellow-500" > 
-          <div class="tshadow my-2.5 mx-auto text-center text-sm text-white"><a href="" >ควิซ</a></div>
+        <li class="box-content xl:flex-auto flex-none h-10 bg-yellow-500 group hover:bg-white" > 
+          <div class="tshadow my-2.5 mx-auto text-center text-sm text-white group-hover:text-yellow-500"><a href="" >ควิซ</a></div>
         </li>
-        <li class="box-content flex-auto h-10 bg-yellow-500" > 
-          <div class="tshadow my-2.5 mx-auto text-center text-sm text-white"><a href="" >TCAS</a></div>
+        <li class="box-content xl:flex-auto flex-none h-10 bg-yellow-500 group hover:bg-white" > 
+          <div class="tshadow my-2.5 mx-auto text-center text-sm text-white group-hover:text-yellow-500"><a href="" >TCAS</a></div>
         </li>
-        <li class="box-content flex-auto h-10 bg-yellow-500" > 
-          <div class="tshadow my-2.5 mx-auto text-center text-sm text-white"><a href="" >ค่าย กิจกรรม</a></div>
+        <li class="box-content xl:flex-auto flex-none h-10 bg-yellow-500 group hover:bg-white" > 
+          <div class="tshadow my-2.5 mx-auto text-center text-sm text-white group-hover:text-yellow-500"><a href="" >ค่าย กิจกรรม</a></div>
         </li>
-        <li class="box-content flex-auto h-10 bg-yellow-500" > 
-          <div class="tshadow my-2.5 mx-auto text-center text-sm text-white"><a href="" >เรื่องเรียน</a></div>
+        <li class="box-content xl:flex-auto flex-none h-10 bg-yellow-500 group hover:bg-white" > 
+          <div class="tshadow my-2.5 mx-auto text-center text-sm text-white group-hover:text-yellow-500"><a href="" >เรื่องเรียน</a></div>
         </li>
-        <li class="box-content flex-auto h-10 bg-yellow-500" > 
-          <div class="tshadow my-2.5 mx-auto text-center text-sm text-white"><a href="" >ต่อนอก</a></div>
+        <li class="box-content xl:flex-auto flex-none h-10 bg-yellow-500 group hover:bg-white" > 
+          <div class="tshadow my-2.5 mx-auto text-center text-sm text-white group-hover:text-yellow-500"><a href="" >ต่อนอก</a></div>
         </li>
-        <li class="box-content flex-auto h-10 bg-yellow-500" > 
-          <div class="tshadow my-2.5 mx-auto text-center text-sm text-white"><a href="" >NUGIRL</a></div>
+        <li class="box-content xl:flex-auto flex-none h-10 bg-yellow-500 group hover:bg-white" > 
+          <div class="tshadow my-2.5 mx-auto text-center text-sm text-white group-hover:text-yellow-500"><a href="" >NUGIRL</a></div>
         </li>
-        <li class="box-content flex-auto h-10 bg-yellow-500" > 
-          <div class="tshadow my-2.5 mx-auto text-center text-sm text-white"><a href="" >ชีวิตวัยรุ่น</a></div>
+        <li class="box-content xl:flex-auto flex-none h-10 bg-yellow-500 group hover:bg-white" > 
+          <div class="tshadow my-2.5 mx-auto text-center text-sm text-white group-hover:text-yellow-500"><a href="" >ชีวิตวัยรุ่น</a></div>
         </li>
-        <li class="box-content flex-auto h-10 bg-yellow-500" > 
-          <div class="tshadow flex flex-row text-center mt-2.5 pl-1 text-sm text-white">
+        <li class="box-content xl:flex-auto flex-none h-10 bg-yellow-500 group hover:bg-white" > 
+          <div class="dropdown">
+          <div class="tshadow flex flex-row text-center mt-2.5 pl-1 text-sm text-white group-hover:text-yellow-500">
             <div class="flex-auto"><a href="">สอบพรีเทส</a></div>
             <div class="flex-auto -ml-1"><i class="material-icons"> keyboard_arrow_down </i></div>
           </div>
+          <ul class="dropdown-menu absolute hidden  z-10 shadow w-60">
+            <ul class="divide-y divide-gray-50  text-sm">
+              <li class=" bg-white flex flex-row pb-1.5 pt-2 px-4 block whitespace-no-wrap  text-gray-500 hover:bg-yellow-100 hover:text-yellow-500">
+                <a class="flex-none pr-2.5 pl-1 text-yellow-500  " href=""><i class="material-icons md-10">fiber_manual_record</i></a>
+                <a class="flex-none " href="">พรีแอดฯ TCAS ม.ปลาย</a>
+              </li>
+              <li class=" bg-white flex flex-row pb-1.5 pt-2 px-4 block whitespace-no-wrap  text-gray-500 hover:bg-yellow-100 hover:text-yellow-500">
+                <a class="flex-none pr-2.5 pl-1 text-yellow-500  " href=""><i class="material-icons md-10">fiber_manual_record</i></a>
+                <a class="flex-none " href="">พรีโอเน็ต ม.3</a>
+              </li>
+              <li class=" bg-white flex flex-row pb-1.5 pt-2 px-4 block whitespace-no-wrap  text-gray-500 hover:bg-yellow-100 hover:text-yellow-500">
+                <a class="flex-none pr-2.5 pl-1 text-yellow-500  " href=""><i class="material-icons md-10">fiber_manual_record</i></a>
+                <a class="flex-none " href="">พรีสอบหมอ ม.3/ม.4</a>
+              </li>
+              <li class=" bg-white flex flex-row pb-2 pt-2 px-4 block whitespace-no-wrap  text-gray-500 hover:bg-yellow-100 hover:text-yellow-500">
+                <a class="flex-none pr-2.5 pl-1 text-yellow-500  " href=""><i class="material-icons md-10">fiber_manual_record</i></a>
+                <a class="flex-none " href="">พรีสอบเข้า ม.1</a>
+              </li>
+            </ul>
+            </ul>
+          </div>
         </li>
-        <li class="box-content flex-auto h-10 bg-yellow-500" > 
-          <div class="tshadow flex flex-row text-center mt-2.5 pl-1 text-sm text-white">
+        <li class="box-content xl:flex-auto flex-none h-10 bg-yellow-500 group hover:bg-white" > 
+          <div class="dropdown">
+          <div class="tshadow flex flex-row text-center mt-2.5 pl-1 text-sm text-white group-hover:text-yellow-500">
             <div class="flex-auto"><a href="">อีเวนต์เด็กดี</a></div>
             <div class="flex-auto -ml-1"><i class="material-icons"> keyboard_arrow_down </i></div>
           </div>
+          <ul class="dropdown-menu absolute hidden  z-10 shadow w-60">
+            <ul class="divide-y divide-gray-50  text-sm">
+              <li class=" bg-white flex flex-row pb-1.5 pt-2 px-4 block whitespace-no-wrap text-gray-500 hover:bg-yellow-100 hover:text-yellow-500 ">
+                <a class="flex-none pr-2.5 pl-1 text-yellow-500  " href=""><i class="material-icons md-10">fiber_manual_record</i></a>
+                <a class="flex-none " href="">งานติวใหญ่ TCAS</a>
+              </li>
+              <li class=" bg-white flex flex-row pb-1.5 pt-2 px-4 block whitespace-no-wrap text-gray-500 hover:bg-yellow-100 hover:text-yellow-500 ">
+                <a class="flex-none pr-2.5 pl-1 text-yellow-500  " href=""><i class="material-icons md-10">fiber_manual_record</i></a>
+                <a class="flex-none " href="">TCAS FAIR</a>
+              </li>
+              <li class=" bg-white flex flex-row pb-1.5 pt-2 px-4 block whitespace-no-wrap text-gray-500 hover:bg-yellow-100 hover:text-yellow-500 ">
+                <a class="flex-none pr-2.5 pl-1 text-yellow-500  " href=""><i class="material-icons md-10">fiber_manual_record</i></a>
+                <a class="flex-none " href="">FANDOM Fair</a>
+              </li>
+              <li class=" bg-white flex flex-row pb-2 pt-2 px-4 block whitespace-no-wrap  text-gray-500 hover:bg-yellow-100 hover:text-yellow-500">
+                <a class="flex-none pr-2.5 pl-1 text-yellow-500  " href=""><i class="material-icons md-10">fiber_manual_record</i></a>
+                <a class="flex-none " href="">ค่ายออนไลน์</a>
+              </li>
+            </ul>
+            </ul>
+          </div>
         </li>
-        <li class="box-content flex-auto h-10 bg-yellow-500" > 
-          <div class="tshadow my-2.5 mx-auto text-center text-sm text-white"><a href="" >ติวออนไลน์</a></div>
+        <li class="box-content xl:flex-auto flex-none h-10 bg-yellow-500 group hover:bg-white" > 
+          <div class="tshadow my-2.5 mx-auto text-center text-sm text-white group-hover:text-yellow-500"><a href="" >ติวออนไลน์</a></div>
         </li>
-        <li class="box-content flex-auto h-10 bg-yellow-500" > 
-          <div class="tshadow my-2.5 mx-auto text-center text-sm text-white"><a href="" >แอป</a></div>
+        <li class="box-content xl:flex-auto flex-none h-10 bg-yellow-500 group hover:bg-white" > 
+          <div class="tshadow my-2.5 mx-auto text-center text-sm text-white group-hover:text-yellow-500"><a href="" >แอป</a></div>
         </li>
-        <li class="box-content flex-auto h-10 bg-yellow-500" > 
-          <div class="tshadow my-2.5 mx-auto text-center text-sm text-white"><a href="" >สินค้า</a></div>
+        <li class="box-content xl:flex-auto flex-none h-10 bg-yellow-500 group hover:bg-white" > 
+          <div class="tshadow my-2.5 mx-auto text-center text-sm text-white group-hover:text-yellow-500"><a href="" >สินค้า</a></div>
         </li>
-        <li class="box-content flex-auto h-10 bg-yellow-500" > 
-          <div class="tshadow flex flex-row text-center mt-2.5 pr-1 text-sm text-white">
+        <li class="box-content xl:flex-auto flex-none h-10 bg-yellow-500 group hover:bg-white" > 
+          <div class="tshadow flex flex-row text-center mt-2.5 pr-1 text-sm text-white group-hover:text-yellow-500">
             <div class="flex-auto -mr-1"><i class="material-icons">person</i></div>
             <div class="flex-auto"><a href="">เข้าสู่ระบบ</a></div>
           </div>
         </li>
-        <li class="box-content flex-auto h-10 bg-yellow-500" > 
-          <div class="tshadow my-2.5 mx-auto text-center text-sm text-white"><a href="" >
+        <li class="box-content flex-auto  h-10 bg-yellow-500 group hover:bg-white" > 
+          <div class="tshadow my-2.5 mx-auto text-center text-sm text-white group-hover:text-yellow-500"><a href="" >
             <i class="material-icons">
             search
             </i>
@@ -101,6 +194,7 @@
         </li>
       </ul>      
     </nav>
+    </div>
   </body>
-
+  <script src="./main.js"></script>
 </html>
