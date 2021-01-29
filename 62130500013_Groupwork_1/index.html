@@ -17,7 +17,10 @@
     <!-- https://v3.vuejs.org/guide/installation.html#release-notes -->
     <!-- Vue CDN -->
     <script src="https://unpkg.com/vue@next"></script>
+
   <style>
+    @import 'https://fonts.googleapis.com/css?family=Kanit|Prompt';
+
     .tshadow{
       text-shadow: 0 0.03rem 0.01rem #c4833a;
     }
@@ -30,12 +33,15 @@
     .material-icons.md-16 { 
       font-size: 16px; 
     }
+    .highlighthead  {
+    font-family: 'Kanit', Arial,sans-serif;
+    }
   </style>
   </head>
 
   <body>
-    <div id="app">
-    <nav class="fixed w-full  bg-yellow-500 shadow">
+    <div id="app" class="flex flex-col ">
+    <div class="flex-none fixed w-full  bg-yellow-500 shadow">
       <ul class="container flex flex-row flex-nowrap overflow-x-auto mx-auto h-10 xl:w-4/5 w-full  divide-x divide-yellow-600 bg-yellow-600 overflow-hidden">
         <li class="box-content xl:flex-auto flex-none border-l border-yellow-600 h-10 bg-yellow-500 hover:bg-white"  
         v-on:mouseover="logomouseover" v-on:mouseleave="logomouseleave" >
@@ -193,8 +199,39 @@
           </a></div>
         </li>
       </ul>      
-    </nav>
     </div>
+    <div class="container flex-none mx-auto mt-10 mb-5 h-44 xl:w-4/5 w-full">
+      <a href=""><img class="mx-auto mt-5" src="./images/KMUTT.png"></a>
+    </div>
+    <div class="container flex-none flex flex-row mx-auto h-auto xl:w-4/5 w-full">
+      <div class="w-3/4 bg-gray-100 flex flex-row rounded-3xl ">
+      <ul class="flex-auto flex flex-col">
+        <li><h2 class="highlighthead text-yellow-500 text-2xl m-5"><b class="text-4xl mr-2">TOP5</b>เรื่องที่คนดูเยอะ</h2></li>
+        <li class="w-auto h-64 bg-white rounded-xl ml-5 mr-6 mb-3 shadow "></li>
+        <li class="w-auto h-20 bg-white rounded-xl ml-5 mr-6 mb-3 shadow "></li>
+        <li class="w-auto h-20 bg-white rounded-xl ml-5 mr-6 mb-3 shadow "></li>
+        <li class="w-auto h-20 bg-white rounded-xl ml-5 mr-6 mb-3 shadow "></li>
+        <li class="w-auto h-20 bg-white rounded-xl ml-5 mr-6 mb-3 shadow "></li>
+      </ul>
+      <ul class="flex-auto flex flex-col">
+        <li><h2 class="highlighthead text-yellow-500 text-2xl m-5 ml-3"><b class="text-4xl mr-2">TOP10</b> กระทู้ทางบ้าน </h2></li>
+        <li class="w-auto h-12 bg-white rounded-xl ml-3 mr-5 mb-4 shadow "></li>
+        <li class="w-auto h-12 bg-white rounded-xl ml-3 mr-5 mb-4 shadow "></li>
+        <li class="w-auto h-12 bg-white rounded-xl ml-3 mr-5 mb-4 shadow "></li>
+        <li class="w-auto h-12 bg-white rounded-xl ml-3 mr-5 mb-4 shadow "></li>
+        <li class="w-auto h-12 bg-white rounded-xl ml-3 mr-5 mb-4 shadow "></li>
+        <li class="w-auto h-12 bg-white rounded-xl ml-3 mr-5 mb-4 shadow "></li>
+        <li class="w-auto h-12 bg-white rounded-xl ml-3 mr-5 mb-4 shadow "></li>
+        <li class="w-auto h-12 bg-white rounded-xl ml-3 mr-5 mb-4 shadow "></li>
+        <li class="w-auto h-12 bg-white rounded-xl ml-3 mr-5 mb-4 shadow "></li>
+        <li class="w-auto h-12 bg-white rounded-xl ml-3 mr-5 mb-4 shadow "></li>
+      </ul>
+      </ul>
+      </div>
+      <div class="w-1/4"></div>
+    </div>
+    </div>
+    
   </body>
   <script src="./main.js"></script>
 </html>
